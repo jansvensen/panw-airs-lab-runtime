@@ -7,7 +7,7 @@
 ## 💡 Overview
 
 This repository sets up a chatbot application with Palo Alto Networks AIRS MCP integration. It is intended to provide an easily accessible solution to try AIRS with different models and structures.
-Quite some parts in here are (at least) learned from cdot65's repo https://github.com/cdot65/prisma-airs-mcp / https://cdot65.github.io/prisma-airs-mcp/. Credits to him for his awesome work! 
+Quite some parts in here are (at least) learned from cdot65' (https://github.com/cdot65/prisma-airs-mcp / https://cdot65.github.io/prisma-airs-mcp/). The AIRS MCP server is his baby. Credits to him for his awesome work! 
 
 ## 🌟 Components
 
