@@ -75,7 +75,10 @@ sudo certbot --nginx --non-interactive --agree-tos -m your@mailaddress.com -d yo
 
 ### Edit the default nginx sites config file to match your setup. Keeping it simple here.
 ```bash
-# Backup the default file
+# Edit the default file
+# You'll find a prepared "default" file for nginx in the "nginx" folder (./nginx/default). Edit the file to suit your domain and server info.
+
+# Backup the standard default file
 sudo mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 
 # Copy the new default file from the repo to the target directory
