@@ -1,0 +1,67 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build outputs
+dist
+*.tsbuildinfo
+
+# Development files
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Documentation (not needed in container)
+*.md
+.claude
+docs
+
+# Testing
+coverage
+.nyc_output
+*.log
+
+# Docker
+docker
+Dockerfile*
+.dockerignore
+
+# Kubernetes
+k8s
+
+# Temporary files
+*.tmp
+*.temp
+tmp
+temp
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.circleci
+
+# Development tools
+.eslintcache
+.prettierignore
+nodemon.json
+
+# Test files (optional - remove if tests needed in container)
+tests
+jest.config.js
+*.test.ts
+*.spec.ts

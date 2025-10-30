@@ -1,0 +1,59 @@
+services:
+  api:
+    volumes:
+    - type: bind
+      source: ./librechat.yaml
+      target: /app/librechat.yaml
+  # Prisma AIRS MCP Server
+  prisma-airs-mcp:
+      image: ghcr.io/cdot65/prisma-airs-mcp:latest
+      container_name: prisma-airs-mcp
+      ports:
+          - "3000:3000"
+      environment:
+          - NODE_ENV=development
+          - PORT=3000
+          - LOG_LEVEL=debug
+          # AIRS Configuration (override with .env file)
+          - AIRS_API_URL=${AIRS_API_URL:-https://api.prisma-airs-test.example.com}
+          - AIRS_API_KEY=${AIRS_API_KEY}
+          # Optional configurations
+          - CACHE_ENABLED=${CACHE_ENABLED:-true}
+          - CACHE_TTL_SECONDS=${CACHE_TTL_SECONDS:-300}
+          - CACHE_MAX_SIZE=${CACHE_MAX_SIZE:-1000}
+          - RATE_LIMIT_ENABLED=${RATE_LIMIT_ENABLED:-true}
+          - RATE_LIMIT_MAX_REQUESTS=${RATE_LIMIT_MAX_REQUESTS:-100}
+          - RATE_LIMIT_WINDOW_MS=${RATE_LIMIT_WINDOW_MS:-60000}
+          # Optional Monitoring (Sentry)
+          - MONITORING_ENABLED=${MONITORING_ENABLED:-false}
+          - SENTRY_DSN=${SENTRY_DSN}
+          - SENTRY_ENVIRONMENT=${SENTRY_ENVIRONMENT:-development}
+          - SENTRY_TRACES_SAMPLE_RATE=${SENTRY_TRACES_SAMPLE_RATE:-0.1}
+          - SENTRY_PROFILES_SAMPLE_RATE=${SENTRY_PROFILES_SAMPLE_RATE:-0.1}
+          - SENTRY_RELEASE=${SENTRY_RELEASE}
+          - SENTRY_SERVER_NAME=${SENTRY_SERVER_NAME}
+          - SENTRY_SEND_DEFAULT_PII=${SENTRY_SEND_DEFAULT_PII:-false}
+      env_file:
+          - .env
+      healthcheck:
+          test:
+              [
+                  "CMD",
+                  "node",
+                  "-e",
+                  "require('http').get('http://localhost:3000/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1); });",
+              ]
+          interval: 30s
+          timeout: 3s
+          retries: 3
+          start_period: 10s
+      restart: unless-stopped
+      # Resource limits (adjust based on requirements)
+      deploy:
+          resources:
+              limits:
+                  cpus: "1"
+                  memory: 512M
+              reservations:
+                  cpus: "0.25"
+                  memory: 128M
