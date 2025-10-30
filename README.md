@@ -7,11 +7,12 @@
 ## 💡 Overview
 
 This repository sets up a chatbot application with Palo Alto Networks AIRS MCP integration. It is intended to provide an easily accessible solution to try AIRS with different models and structures.
+Quite some parts in here are (at least) learned from cdot65's repo https://github.com/cdot65/prisma-airs-mcp / https://cdot65.github.io/prisma-airs-mcp/. Credits to him for his awesome work! 
 
 ## 🌟 Components
 
 * LibreChat: As chat frontend and MCP client
-* Palo Alto Networks AIRS MCP: As client for the PRISMA AIRS API
+* Palo Alto Networks AIRS MCP: As client for the PRISMA AIRS API (https://github.com/PaloAltoNetworks/pan-mcp-relay)
 * nginx: As reverse proxy for SSL connections to the web frontend
 * Docker: to run everything inside nice little containers
 
