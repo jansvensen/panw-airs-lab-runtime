@@ -127,6 +127,7 @@ sudo docker ps
 You should no be able to access your librechat gui at https://your-host.your.domain. Create an account, log in and get things going. 
 
 ![alt text](image.png)
+![alt text](image-1.png)
 
 ## 👷 Not your type of environment? Make it so!
 
