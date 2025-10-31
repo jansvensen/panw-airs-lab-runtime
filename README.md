@@ -95,7 +95,13 @@ sudo nginx -t
 sudo systemctl reload nginx
 ```
 
-### Prepare your .env file
+### 👷 Prepare your config files
+This repo expects you to use Azure Foundry for LLM hosting. The relevant settings can be found in 
+- .env: Access Key(s)
+- librechat.yaml: Endpoint configuration including model selection
+
+You'll definitely need to set your API Key. 
+In case you want to use a different backend, you'll need to set that up in the librechat.yaml file. Scroll to the "endpoints" section and alter to fit your needs. Here's some guidance: https://www.librechat.ai/docs/configuration/librechat_yaml
 ```bash
 # Copy the example .env file
 cp ./.env.example ./.env
@@ -105,13 +111,6 @@ cp ./.env.example ./.env
 - AIRS_DEFAULT_PROFILE_NAME=<YourAIRSProfile>
 - AZURE_API_KEY=<YourAzureAPIKey>
 ```
-
-### 👷 Optionally: Edit the librechat.yaml file
-This repo expects you to use Azure Foundry for LLM hosting. The relevant settings can be found in 
-- .env: Access Key(s)
-- librechat.yaml: Endpoint configuration including model selection
-
-In case you want to use a different backend, you'll need to set that up in the librechat.yaml file. Scroll to the "endpoints" section and alter to fit your needs. Here's some guidance: https://www.librechat.ai/docs/configuration/librechat_yaml
 
 ### Install docker containers
 ```bash
