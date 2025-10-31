@@ -101,7 +101,7 @@ This repo expects you to use Azure Foundry for LLM hosting. The relevant setting
 - librechat.yaml: Endpoint configuration including model selection
 
 You'll definitely need to set your API Key. 
-In case you want to use a different backend, you'll need to set that up in the librechat.yaml file. Scroll to the "endpoints" section and alter to fit your needs. Here's some guidance: https://www.librechat.ai/docs/configuration/librechat_yaml
+
 ```bash
 # Copy the example .env file
 cp ./.env.example ./.env
@@ -111,6 +111,8 @@ cp ./.env.example ./.env
 - AIRS_DEFAULT_PROFILE_NAME=<YourAIRSProfile>
 - AZURE_API_KEY=<YourAzureAPIKey>
 ```
+
+In case you want to use a different backend, you'll need to set that up in the librechat.yaml file. Scroll to the "endpoints" section and alter to fit your needs. Here's some guidance: https://www.librechat.ai/docs/configuration/librechat_yaml
 
 ### Install docker containers
 ```bash
