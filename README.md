@@ -106,6 +106,9 @@ cp ./.env.example ./.env
 - AZURE_API_KEY=<YourAzureAPIKey>
 ```
 
+### Optionally: Edit the librechat.yaml file
+In case you want to use a different backend, you'll need to set that up in the librechat.yaml file. Scroll to the "endpoints" section and alter to fit your needs. Here's some guidance: https://www.librechat.ai/docs/configuration/librechat_yaml
+
 ### Install docker containers
 ```bash
 # This will pull all relevant images and create containers upon it.
