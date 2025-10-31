@@ -86,7 +86,7 @@ sudo mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.ba
 sudo cp ./nginx/default /etc/nginx/sites-available/default
 ```
 
-# Make sure you're good to go
+### Make sure you're good to go
 ```bash
 # Verify the nginx configuration
 sudo nginx -t
