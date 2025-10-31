@@ -106,7 +106,11 @@ cp ./.env.example ./.env
 - AZURE_API_KEY=<YourAzureAPIKey>
 ```
 
-### Optionally: Edit the librechat.yaml file
+### 👷 Optionally: Edit the librechat.yaml file
+This repo expects you to use Azure Foundry for LLM hosting. The relevant settings can be found in 
+- .env: Access Key(s)
+- librechat.yaml: Endpoint configuration including model selection
+
 In case you want to use a different backend, you'll need to set that up in the librechat.yaml file. Scroll to the "endpoints" section and alter to fit your needs. Here's some guidance: https://www.librechat.ai/docs/configuration/librechat_yaml
 
 ### Install docker containers
@@ -131,15 +135,3 @@ You should now be able to access your librechat gui at https://your-host.your.do
 
 ![Librechat](./pictures/Librechat.png)
 ![SCM AIRS Runtime Log](./pictures/SCMAIRSRuntimeLog.png)
-
-## 👷 Not your type of environment? Make it so!
-
-This repo expects you to use Azure Foundry for LLM hosting. The relevant settings can be found in
-- .env: Access Key(s)
-- librechat.yaml: Endpoint configuration including model selection
-
-If your environments differs, please change settings accordingly and re-deploy the containers.
-```bash
-# For the lazy ones, including myself: 
-sudo docker compose stop && git pull && sudo docker compose up -d && sudo docker ps
-```
