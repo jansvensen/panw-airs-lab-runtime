@@ -95,12 +95,12 @@ sudo nginx -t
 sudo systemctl reload nginx
 ```
 
-### 👷 Prepare your config files
+### Prepare your config files
 This repo expects you to use Azure Foundry for LLM hosting. The relevant settings can be found in 
 - .env: Access Key(s)
 - librechat.yaml: Endpoint configuration including model selection
 
-You'll definitely need to set your API Key. 
+You'll definitely need to set your Azure API Key and your AIRS API information.
 
 ```bash
 # Copy the example .env file
