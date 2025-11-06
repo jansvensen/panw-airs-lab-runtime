@@ -105,7 +105,7 @@ endpoints:
     groups:
     - group: "Azure"
       apiKey: "${AZURE_API_KEY}"  # arbitrary env var name
-      baseURL: "https://sjansen-openai.services.ai.azure.com/models/"
+      baseURL: "${AZURE_BASE_URL}"
       version: "2024-05-01-preview" # Optional: specify API version
       serverless: true
       models:
