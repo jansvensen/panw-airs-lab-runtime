@@ -1,8 +1,6 @@
 # panw-airs-lab-runtime
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![GitHub top language](https://img.shields.io/github/languages/top/jansvensen/panw-airs-lab-runtime)
-![GitHub contributors](https://img.shields.io/github/contributors/jansvensen/panw-airs-lab-runtime)
 
 ## 💡 Overview
 
